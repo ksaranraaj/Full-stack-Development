@@ -1,0 +1,70 @@
+﻿@model List<WebApplication1.Models.HomeModel>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+      
+<fieldset>  
+    <legend>Users</legend>          
+     
+  <style>
+                table, th, td {
+                    border: 1px solid;
+                }
+
+                    td:nth-child(1) {
+                        background-color: orange;
+                    }
+
+                    td:nth-child(2) {
+                        background-color: forestgreen;
+                    }
+
+                    td:nth-child(3) {
+                        background-color: orangered;
+                    }
+                    td:nth-child(4){
+                        background-color:crimson
+                    }
+</style>
+     <div class="formRowContainer">
+                @using (Html.BeginForm("Delete", "Home", FormMethod.Post))
+                {
+                    <div class="labelContainer">Name</div>  
+        <div class="valueContainer">  
+            @Model.Count
+                    <table>
+                        <tr>
+                            <th>Conatct</th>
+                            <th>Name</th>
+                            <th>Register_Number</th>
+                            <th>E-Mail</th>
+                        </tr>
+                        @foreach (var student in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @student.StdContact 
+                                </td>
+                                <td>
+                                    @student.StdName
+                                </td>
+                                <td>
+                                    @student.StdRegNumber
+                                </td>
+                                <td>
+                                    @student.StdEmail
+                                </td>
+                                <td><a href="/home/delete/@student.StdRegNumber">Delete</a></td>
+                            </tr>
+                        }
+                    </table>
+
+        </div> 
+        }
+
+     </div>   
+</fieldset> 
+</div>

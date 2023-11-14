@@ -1,0 +1,18 @@
+﻿@model WebApplication1.Models.HomeModel
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<div>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-actions no-color">
+                Successfully deleted!
+                |
+                @Html.ActionLink("Back to List", "user")
+            </div>
+        }
+</div>

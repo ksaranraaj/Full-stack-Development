@@ -1,0 +1,48 @@
+﻿@model WebApplication1.Models.HomeModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h2>Add User</h2>  
+   
+<fieldset>  
+    <legend>User</legend>          
+     
+@using (Html.BeginForm("User", "Home", FormMethod.Post))
+{  
+     <div class="formRowContainer">  
+       
+        <div class="col-form-labelContainer">Name</div>
+        <div class="valueContainer">
+             @Html.TextBoxFor(model => model.StdName)
+        </div>
+                <div class="col-form-labelContainer">Contactno</div>
+                <div class="valueContainer">
+                    @Html.TextBoxFor(model => model.StdContact)
+                </div>
+                <div class="labelContainer">Reg.No</div>
+                <div class="valueContainer">
+                    @Html.TextBoxFor(model => model.StdRegNumber)
+                </div>
+                
+        <div class="col-form-labelContainer">Email</div>
+        <div class="valueContainer">
+                    @Html.TextBoxFor(model => model.StdEmail)
+                </div>
+             </div>  
+    <div class="clearStyle"></div>  
+    <div class="buttonContainer">  
+        <button>Add Product</button>
+
+    </div>
+            <div class="container body-content">
+                <hr />
+                <footer>
+                    <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+                </footer>
+            </div>
+}
+</fieldset> 
+</div>
